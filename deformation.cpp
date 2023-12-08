@@ -15,9 +15,10 @@ void deformation::deforme(const NRmatrix<double>& Im, NRmatrix<double>& resDefor
 			double iprime, jprime;
 			int valeur_mask;
 			double valeur_imDeforme;
-			t.transforme(param,i,j,&iprime,&jprime);
-			valeur_imDeforme=meth_interpole.interpolation(Im,iprime,jprime,&valeur_mask);
-			resDeforme[i][j]=valeur_imDeforme;
+			t.transforme(param,i,j,&iprime,&jprime); // t est une instance de déformation et on obtient
+								// les coord déformées (iprime, jprime)
+			valeur_imDeforme=meth_interpole.interpolation(Im,iprime,jprime,&valeur_mask); // verif si les coord déformées sont dans l'image
+			resDeforme[i][j]=valeur_imDeforme; // on stocke les résultats 
 			resMask[i][j]=valeur_mask;
 		}
 	}
