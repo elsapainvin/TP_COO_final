@@ -5,3 +5,4 @@ void transformation::transforme(VecDoub& param, double x, double y, double* x_re
 	*x_res=cos(param[2]*(M_PI/180))*x-sin(param[2]*(M_PI/180))*y+param[0];
 	*y_res=sin(param[2]*(M_PI/180))*x+cos(param[2]*(M_PI/180))*y+param[1];
 }
+// en 2 on a théta, en 1 on a y et en 0 on a x
